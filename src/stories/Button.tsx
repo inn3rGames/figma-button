@@ -1,4 +1,5 @@
 import React from 'react';
+import { PlusSquareOutlined } from '@ant-design/icons';
 
 interface ButtonProps {
   /**
@@ -42,6 +43,7 @@ export const Button = ({
       {...props}
     >
       {label}
+      <PlusSquareOutlined />
     </button>
   );
 };
