@@ -37,8 +37,8 @@ export const CustomButton = ({
     ...props
 }: CustomButtonProps) => {
     return (
-        <div>
-            <Button {...props}>
+        <div {...props}>
+            <Button>
                 <FireFilled />
                 button / 02
                 <FireFilled />
