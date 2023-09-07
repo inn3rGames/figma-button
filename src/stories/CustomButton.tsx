@@ -37,13 +37,46 @@ export const CustomButton = ({
     ...props
 }: CustomButtonProps) => {
     return (
-        <div {...props}>
-            <Button>
+        <div
+            id="custom-button"
+            {...props}
+            style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+            }}
+        >
+            <Button
+                style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    alignItems: "center",
+                }}
+            >
                 <FireFilled />
-                button / 02
+                <div
+                    id="custom-button-content"
+                    style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "center",
+                        alignItems: "center",
+                    }}
+                >
+                    <div id="custom-button-text">&nbsp;button</div>
+                    <div id="custom-button-number" style={{ color: "gray" }}>
+                        &nbsp;/&nbsp;02&nbsp;
+                    </div>
+                </div>
                 <FireFilled />
-            </Button>{" "}
-            <Button>
+            </Button>
+            <Button
+                style={{
+                    marginLeft: "5%",
+                }}
+            >
                 <PlusOutlined />
             </Button>
         </div>
