@@ -1,0 +1,27 @@
+.default {
+    background-color: #5850EC;
+    color: #FFFFFF;
+    border: none;
+    box-shadow: none;
+}
+
+.outline {
+    background-color: rgba(0, 0, 0, 0);
+    color: #5850EC;
+    border: none;
+    box-shadow: none;
+}
+
+.empty {
+    background-color: rgba(0, 0, 0, 0);
+    color: #5850EC;
+    border: none;
+    box-shadow: none;
+}
+
+.faded {
+    background-color: #F0F5FF;
+    color: #5850EC;
+    border: none;
+    box-shadow: none;
+}
