@@ -1,7 +1,9 @@
 import React from 'react';
+import { Button } from 'antd';
+import { FireFilled } from '@ant-design/icons';
 import { PlusSquareOutlined } from '@ant-design/icons';
 
-interface ButtonProps {
+interface CustomButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
@@ -27,23 +29,16 @@ interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({
+export const CustomButton = ({
   primary = false,
   size = 'medium',
   backgroundColor,
   label,
   ...props
-}: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+}: CustomButtonProps) => {
   return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
-      {...props}
-    >
-      {label}
-      <PlusSquareOutlined />
-    </button>
+
+    <Button {...props}><FireFilled />button / 02<FireFilled /></Button>
+
   );
 };
