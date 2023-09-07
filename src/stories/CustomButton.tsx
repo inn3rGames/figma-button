@@ -24,6 +24,8 @@ interface CustomButtonProps {
      * Optional click handler
      */
     onClick?: () => void;
+
+    contentColor: string;
 }
 
 /**
@@ -34,6 +36,7 @@ export const CustomButton = ({
     size = "medium",
     backgroundColor,
     label,
+    contentColor,
     ...props
 }: CustomButtonProps) => {
     return (
@@ -53,9 +56,10 @@ export const CustomButton = ({
                     flexDirection: "row",
                     justifyContent: "center",
                     alignItems: "center",
+                    backgroundColor: backgroundColor,
                 }}
             >
-                <FireFilled />
+                <FireFilled style={{ color: contentColor }} />
                 <div
                     id="custom-button-content"
                     style={{
@@ -65,19 +69,29 @@ export const CustomButton = ({
                         alignItems: "center",
                     }}
                 >
-                    <div id="custom-button-text">&nbsp;button</div>
-                    <div id="custom-button-number" style={{ color: "gray" }}>
+                    <div
+                        id="custom-button-text"
+                        style={{ color: contentColor }}
+                    >
+                        &nbsp;button
+                    </div>
+                    <div
+                        id="custom-button-number"
+                        style={{ color: contentColor, opacity: "0.5" }}
+                    >
                         &nbsp;/&nbsp;02&nbsp;
                     </div>
                 </div>
-                <FireFilled />
+                <FireFilled style={{ color: contentColor }} />
             </Button>
             <Button
                 style={{
                     marginLeft: "5%",
+                    backgroundColor: backgroundColor,
+                    color: contentColor,
                 }}
             >
-                <PlusOutlined />
+                <PlusOutlined style={{ color: contentColor }} />
             </Button>
         </div>
     );
