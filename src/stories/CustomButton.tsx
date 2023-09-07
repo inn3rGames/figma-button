@@ -5,29 +5,17 @@ import { PlusOutlined } from "@ant-design/icons";
 import "./CustomButton.css";
 
 interface CustomButtonProps {
-    /**
-     * Is this the principal call to action on the page?
-     */
     primary?: boolean;
-    /**
-     * What background color to use
-     */
-    /**
-     * How large should the button be?
-     */
-    size?: "small" | "medium" | "large";
-    /**
-     * Button contents
-     */
+
     label: string;
-    /**
-     * Optional click handler
-     */
+
     onClick?: () => void;
 
     theme: "default" | "outline" | "empty" | "faded";
 
     radius: "simple" | "round" | "circle";
+
+    size: "xs" | "sm" | "md" | "lg" | "xl";
 }
 
 /**
@@ -35,10 +23,10 @@ interface CustomButtonProps {
  */
 export const CustomButton = ({
     primary = false,
-    size = "medium",
     label,
     theme,
     radius,
+    size,
     ...props
 }: CustomButtonProps) => {
     const borderType = theme === "outline" ? "solid 1px #E5EDFF" : "none";
@@ -54,7 +42,7 @@ export const CustomButton = ({
             }}
         >
             <Button
-                className={theme + " " + radius}
+                className={theme + " " + radius + " " + "main-" + size}
                 style={{
                     display: "flex",
                     flexDirection: "row",
@@ -63,7 +51,7 @@ export const CustomButton = ({
                     border: borderType,
                 }}
             >
-                <FireFilled className={theme} />
+                <FireFilled className={theme + " " + "plus-" + size} />
                 <div
                     id="custom-button-content"
                     style={{
@@ -73,27 +61,34 @@ export const CustomButton = ({
                         alignItems: "center",
                     }}
                 >
-                    <div id="custom-button-text" className={theme}>
+                    <div
+                        id="custom-button-text"
+                        className={theme + " " + "font-" + size}
+                    >
                         &nbsp;button
                     </div>
                     <div
                         id="custom-button-number"
-                        className={theme}
+                        className={theme + " " + "font-" + size}
                         style={{ opacity: "0.5" }}
                     >
                         &nbsp;/&nbsp;02&nbsp;
                     </div>
                 </div>
-                <FireFilled className={theme} />
+                <FireFilled className={theme + " " + "plus-" + size} />
             </Button>
             <Button
-                className={theme + " " + radius}
+                className={theme + " " + radius + " " + "square-" + size}
                 style={{
                     marginLeft: "5%",
                     border: borderType,
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    alignItems: "center",
                 }}
             >
-                <PlusOutlined className={theme} />
+                <PlusOutlined className={theme + " " + "plus-" + size} />
             </Button>
         </div>
     );
