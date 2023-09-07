@@ -26,6 +26,8 @@ interface CustomButtonProps {
     onClick?: () => void;
 
     theme: "default" | "outline" | "empty" | "faded";
+
+    radius: "simple" | "round" | "circle";
 }
 
 /**
@@ -36,6 +38,7 @@ export const CustomButton = ({
     size = "medium",
     label,
     theme,
+    radius,
     ...props
 }: CustomButtonProps) => {
     const borderType = theme === "outline" ? "solid 1px #E5EDFF" : "none";
@@ -51,7 +54,7 @@ export const CustomButton = ({
             }}
         >
             <Button
-                className={theme}
+                className={theme + " " + radius}
                 style={{
                     display: "flex",
                     flexDirection: "row",
@@ -84,7 +87,7 @@ export const CustomButton = ({
                 <FireFilled className={theme} />
             </Button>
             <Button
-                className={theme}
+                className={theme + " " + radius}
                 style={{
                     marginLeft: "5%",
                     border: borderType,

@@ -26,6 +26,7 @@ export const Primary: Story = {
     args: {
         primary: true,
         label: "Custom Button",
-        theme: "default",
+    theme: "default",
+        radius: "simple",
     },
 };
