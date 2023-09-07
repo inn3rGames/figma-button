@@ -26,18 +26,6 @@
     box-shadow: none;
 }
 
-.simple {
-    border-radius: 0%;
-}
-
-.round {
-    border-radius: 5px 5px 5px 5px;
-}
-
-.circle {
-    border-radius: 50% 50% 50% 50%;
-}
-
 .main-xs {
     width: 80px;
     height: 24px;

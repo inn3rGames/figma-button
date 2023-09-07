@@ -30,6 +30,43 @@ export const CustomButton = ({
     ...props
 }: CustomButtonProps) => {
     const borderType = theme === "outline" ? "solid 1px #E5EDFF" : "none";
+
+    let sizeInPx = 24;
+    switch (size) {
+        case "xs":
+            sizeInPx = 24;
+            break;
+        case "sm":
+            sizeInPx = 32;
+            break;
+        case "md":
+            sizeInPx = 40;
+            break;
+        case "lg":
+            sizeInPx = 48;
+            break;
+        case "xl":
+            sizeInPx = 56;
+            break;
+        default:
+            sizeInPx = 56;
+    }
+
+    let borderRadiusPx = 0;
+    switch (radius) {
+        case "simple":
+            borderRadiusPx = 0;
+            break;
+        case "round":
+            borderRadiusPx = 0.1 * sizeInPx;
+            break;
+        case "circle":
+            borderRadiusPx = 0.5 * sizeInPx;
+            break;
+        default:
+            borderRadiusPx = 0;
+    }
+
     return (
         <div
             id="custom-button"
@@ -42,13 +79,14 @@ export const CustomButton = ({
             }}
         >
             <Button
-                className={theme + " " + radius + " " + "main-" + size}
+                className={theme + " " + "main-" + size}
                 style={{
                     display: "flex",
                     flexDirection: "row",
                     justifyContent: "center",
                     alignItems: "center",
                     border: borderType,
+                    borderRadius: borderRadiusPx,
                 }}
             >
                 <FireFilled className={theme + " " + "plus-" + size} />
@@ -78,7 +116,7 @@ export const CustomButton = ({
                 <FireFilled className={theme + " " + "plus-" + size} />
             </Button>
             <Button
-                className={theme + " " + radius + " " + "square-" + size}
+                className={theme + " " + "square-" + size}
                 style={{
                     marginLeft: "5%",
                     border: borderType,
@@ -86,6 +124,7 @@ export const CustomButton = ({
                     flexDirection: "row",
                     justifyContent: "center",
                     alignItems: "center",
+                    borderRadius: borderRadiusPx,
                 }}
             >
                 <PlusOutlined className={theme + " " + "plus-" + size} />
